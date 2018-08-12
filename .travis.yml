@@ -6,6 +6,7 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-get install gcc-7 g++-7 -y
   - echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" | sudo tee -a /etc/apt/sources.list
+  - sudo apt-get update
   - sudo apt-get install libdlib-dev libopenblas-dev
   - sudo apt-get install python-matplotlib
 install:
@@ -14,7 +15,6 @@ install:
 script:
   - cmake .
   - cmake --build .
-  - cmake --build . --target test
   - cmake --build . --target package
 deploy:
   - provider: script
