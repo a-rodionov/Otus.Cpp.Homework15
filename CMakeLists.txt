@@ -24,7 +24,7 @@ target_link_libraries(kkmeans openblas)
 install(TARGETS kkmeans RUNTIME DESTINATION bin)
 install(FILES kkmeans_ex.txt kkmeans_sky.txt kkmeans_sky_res.png DESTINATION  /opt/kkmeans)
 install(FILES plot.py DESTINATION /opt/kkmeans PERMISSIONS
-        OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE GROUP_READ)
+        OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
 
 set(CPACK_GENERATOR DEB)
 set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
